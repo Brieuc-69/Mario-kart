@@ -1,199 +1,152 @@
-html,
-body {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: navajowhite;
-}
-
-.box {
-	display: flex;
-}
-
-.box .inner {
-	width: 400px;
-	height: 200px;
-	line-height: 200px;
-	font-size: 4em;
-	font-family: sans-serif;
-	font-weight: bold;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.box .inner:first-child {
-	background-color: indianred;
-	color: darkred;
-	transform-origin: right;
-	transform: perspective(100px) rotateY(-15deg);
-}
-
-.box .inner:last-child {
-	background-color: lightcoral;
-	color: antiquewhite;
-	transform-origin: left;
-	transform: perspective(100px) rotateY(15deg);
-}
-
-.box .inner span {
-	position: absolute;
-	animation: marquee 5s linear infinite;
-}
-
-.box .inner:first-child span {
-	animation-delay: 2.5s;
-	left: -100%;
+html, body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
 }
 .grass, .sky, .road{
-    position: relative;
-  }
-  .sky{
-    height: 40%;
-    background-color: skyblue;
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.33))
-  }
-  .grass{
-    height: 30%;
-    background-color: seagreen;
-    background-image: linear-gradient(to top, rgba(255,255,255,0) 75%, rgba(255,255,255,.25))
-  }
-  .road{
-    height: 30%;
-    top: 300px;
-    background: dimgrey;
-    box-sizing: border-box;
-    border-top: 10px solid grey;
-    border-bottom: 10px solid grey;
-    width: 100%;
-  }
-  /*// ELEMENTS TO ANIMATE //*/
-  .mario{
-    position: absolute;
-    top: -50px;
-    left: 0;
-    animation-name: mario;
-    animation-duration: 2s;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    z-index: 5;
-  }
-  .luigi{
-    position: absolute;
-    top: 100px;
-    left: 0px;
-    z-index: 55;
-    animation-name: luigi ;
-    animation-duration: 3s;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    animation-timing-function:  linear;
-    animation-iteration-count: infinite ;
-  }
-  .cloud{
-    padding: top;
-    position: absolute;
-    top: -300px;
-    left: 0;
-  }
-  .cloud2{
-    position: absolute;
-    top: -200px;
-    right: 0;
-    max-width: 200px;
-  }
-  
-  .cloud{
-    animation-name: cloud-move;
-    animation-duration: 4s;
-    animation-direction: reverse;
-    animation-fill-mode: ;
-    animation-delay: ;
-    animation-timing-function: ;
-    animation-iteration-count: infinite ;
-  }
-  .cloud2{
-    animation-name: cloud-move;
-    animation-duration: 3s;
-    animation-direction: normal;
-    animation-fill-mode: ;
-    animation-delay: ;
-    animation-timing-function: ;
-    animation-iteration-count: infinite ;
-  }
-  .lines{
-    box-sizing: border-box;
-    border: 5px dashed rgb(190, 93, 93);
-    height: 0px;
-    width: 6000px;
-    position: absolute;
-    top: 45%;
-    left: 0;
-    animation-name: ;
-    animation-duration: ;
-    animation-direction: ;
-    animation-fill-mode: ;
-    animation-delay: ;
-    animation-timing-function: ;
-    animation-iteration-count: ;
-  
-  }
- 
-  @keyframes mario {
+  position: relative;
+}
+.sky{
+  height: 40%;
+  background-color: skyblue;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.33))
+}
+.grass{
+  height: 30%;
+  background-color: seagreen;
+  background-image: linear-gradient(to top, rgba(255,255,255,0) 75%, rgba(255,255,255,.25))
+}
+.road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
 
-        from {left: 0px;}
-        to {left: 2200px;}
-    
-   
-  }
+.mario{
+  position: absolute;
+  top: -20px;
+  left: -50px;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 5;
+}   
 
-  @keyframes luigi{
-
-    from {left: 0px;}
-    to {left: 2200px;}
-
+.luigi{
+  position: absolute;
+  top: -20px;
+  left: -50px;
+  z-index: 55;
+  animation-name:  drive;
+  animation-duration: 6s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 
 }
-  
-
-
-
-  @keyframes mario-jump {
-    0%{
-      
-    }
-    48% {
-    }
-    50% {
-    }
-    52% {
-    }
-    100%{
-      
-    }
+.cloud{
+  position: absolute;
+  top: 120px;
+  left: 0;
+}
+.cloud2{
+  position: absolute;
+  top: 20px;
+  right: 0;
+  max-width: 200px;
+}
+.cloud,
+.cloud2{
+  animation-name: cloud-move;
+  animation-duration:10s;
+  animation-direction: reverse;
+  animation-fill-mode: none;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.lines{
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 6000px;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  animation-name: lines-move;
+  animation-duration: 20s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes drive {
+  0%{
+    left:-150px;
   }
-  @keyframes cloud-move {
-    0%{
-      
-    }
-    
-    100%{ transform:translate(2000px);
-    }
+  100%{
+      left: 1500px;
   }
-  @keyframes lines-move {
-  
+}
+@keyframes mario-jump {
+
+  0%{
+      left: 0px;
+
+
+
+  }
+  30% {transform: translateY(-50px);
+       ;
+
+  }
+  31% {transform:translateY(-75px);
+
+  }
+  52% {transform:translateY(-100px);
+    transform: translateX(0);
+  }
+  100%{
+      left: 1900px;
+
+
+  }
+}
+@keyframes cloud-move {
+  0%{
+    left: -150px;
   }
 
-@keyframes marquee {
-	from {
-		left: 100%;
-	}
+  100%{left: 1500px;
+  }
+}
+@keyframes lines-move {
+  0%{left: 0px;
 
-	to {
-		left: -100%;
-	}
+  }
+  100%{left: 0px;
+
+
+  }
+
+}
+@keyframes v8 {
+  0%{top:-170px;
+    left:0px;
+  }
+
+  100%{top:-170px;
+      left: 1700px;
+  }
 }
